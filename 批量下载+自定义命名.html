@@ -1,0 +1,143 @@
+<script>
+    function onDownload(url,fileName){
+          let self = this;
+          let x = new XMLHttpRequest();
+          x.open("GET", url, true);
+          x.responseType = "blob";
+          x.onload = function() {
+            //self.exportLoading = false;
+            let url = window.URL.createObjectURL(x.response);
+            let a = document.createElement("a");
+            a.href = url;
+            a.download = fileName;
+            a.click();
+          };
+          x.send();
+        }
+    const bgList = [
+        {
+          value: 'bg1',
+          src: '/background/bg1.png',
+        },
+        {
+          value: 'bg2',
+          src: '/background/bg2.png',
+        },
+        {
+          value: 'bg3',
+          src: '/background/bg3.png',
+        },
+        {
+          value: 'bg4',
+          src: '/background/bg4.png',
+        },
+        {
+          value: 'bg5',
+          src: '/background/bg5.png',
+        },
+        {
+          value: 'bg6',
+          src: '/background/bg6.jpeg',
+        },
+        {
+          value: 'bg7',
+          src: '/background/bg7.jpeg',
+        },
+        {
+          value: 'bg8',
+          src: '/background/bg8.png',
+        },
+        {
+          value: 'bg9',
+          src: '/background/bg9.jpeg',
+        },
+        {
+          value: 'bg10',
+          src: '/background/bg10.png',
+        },
+        {
+          value: 'bg11',
+          src: '/background/bg11.jpeg',
+        },
+        {
+          value: 'bg12',
+          src: '/background/bg12.jpeg',
+        },
+        {
+          value: 'bg13',
+          src: '/background/bg13.jpeg',
+        },
+        {
+          value: 'bg14',
+          src: '/background/bg14.jpeg',
+        },
+        {
+          value: 'bg15',
+          src: '/background/bg15.jpeg',
+        },
+        {
+          value: 'bg16',
+          src: '/background/bg16.jpeg',
+        },
+        {
+          value: 'bg17',
+          src: '/background/bg17.jpeg',
+        },
+        {
+          value: 'bg18',
+          src: '/background/bg18.jpeg',
+        },
+        {
+          value: 'bg19',
+          src: '/background/bg19.png',
+        },
+        {
+          value: 'bg20',
+          src: '/background/bg20.jpeg',
+        },
+        {
+          value: 'bg21',
+          src: '/background/bg21.jpeg',
+        },
+        {
+          value: 'bg22',
+          src: '/background/bg22.jpeg',
+        },
+        {
+          value: 'bg23',
+          src: '/background/bg23.jpeg',
+        },
+        {
+          value: 'bg24',
+          src: '/background/bg24.jpeg',
+        },
+        {
+          value: 'bg25',
+          src: '/background/bg25.png',
+        },
+        {
+          value: 'bg26',
+          src: '/background/bg26.jpeg',
+        },
+        {
+          value: 'bg27',
+          src: '/background/bg27.jpeg',
+        },
+      ];
+      let t = 0;
+      function a() {
+        bgList.forEach((key) => {
+            setTimeout(() => {
+                onDownload(`https://material.gtimg.com${key.src}`, `${key.value}`);
+            },t);
+            t += 100;
+        // thumb: key.src,
+        // value: key.src,
+      });
+      }
+    
+      a();
+      
+    
+        
+    </script>
